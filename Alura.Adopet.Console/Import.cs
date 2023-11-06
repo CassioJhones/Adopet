@@ -18,7 +18,8 @@ internal class Import
         foreach (var pet in listaDePet){
             System.Console.WriteLine(pet);
             try{
-                var resposta = await CreatePetAsync(pet);
+                var httpCreatePet = new HttpClientPet();
+                var httpCreatePet = await CreatePetAsync(pet);
             }
             catch (Exception ex){
                 System.Console.WriteLine(ex.Message);
