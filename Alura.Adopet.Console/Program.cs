@@ -19,17 +19,17 @@ try
             var help = new Help();
             help.ExibeDocumentacao(parametros:args[1]);
             break;
+
         case "show":
             var show = new Show();
             show.ExibeConteudoArquivo(caminhoDooArquivoASerExibido: args[1]);
             break;
+
         case "list":
-            var pets = await ListPetsAsync();
-            foreach (var pet in pets)
-            {
-                Console.WriteLine(pet);
-            }
+            var list = new List();
+            list.ListaDadosPetsAPIAsync();
             break;
+
         default:
             // exibe mensagem de comando inválido
             Console.WriteLine("Comando inválido!");

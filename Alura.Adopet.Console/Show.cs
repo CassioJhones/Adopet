@@ -1,27 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿namespace Alura.Adopet.Console;
 
-namespace Alura.Adopet.Console
+[DocComando(instrucao: "show",
+            documentacao: "adopet show <ARQUIVO> comando que exibe no terminal o conteúdo do arquivo importado")]
+internal class Show
 {
-    internal class Show
+    public void ExibeConteudoArquivo(string caminhoDooArquivoASerExibido)
     {
-        public void ExibeConteudoArquivo(string caminhoDooArquivoASerExibido)
-        {
-            using (StreamReader sr = new StreamReader(caminhoDooArquivoASerExibido))
-            {
-                System.Console.WriteLine("------ Serão importados os dados abaixo ------");
-                while (!sr.EndOfStream)
-                {
-                    // separa linha usando ponto e vírgula
-                    string[]? propriedades = sr.ReadLine().Split(';');
-                    // cria objeto Pet a partir da separação
-                    Pet pet = new Pet(Guid.Parse(propriedades[0]), propriedades[1], TipoPet.Cachorro);
-                    System.Console.WriteLine(pet);
-                }
-            }
-        }
+        LeitorDeArquivo leitor = new LeitorDeArquivo();
+        var listadePets = leitor.RealizaLeitura(caminhoDooArquivoASerExibido);
+
+        foreach (var pet in listadePets)
+            System.Console.WriteLine(pet);
     }
 }
