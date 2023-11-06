@@ -1,7 +1,7 @@
-﻿namespace Alura.Adopet.Console;
+﻿namespace Alura.Adopet.Console.Comandoos;
 
 [AttributeUsage(AttributeTargets.Class)]
-internal class DocComando : System.Attribute
+internal class DocComando : Attribute
 {
     public DocComando(string instrucao, string documentacao)
     {
@@ -9,6 +9,6 @@ internal class DocComando : System.Attribute
         Documentacao = documentacao;
     }
 
-    public string Instrucao { get;}
-    public string Documentacao { get;}
+    public string Instrucao { get; }
+    public string Documentacao { get; }
 }

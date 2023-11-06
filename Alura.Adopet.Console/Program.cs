@@ -27,7 +27,7 @@ try
 
         case "list":
             var list = new List();
-            list.ListaDadosPetsDaAPIAsync();
+            await list.ListaDadosPetsDaAPIAsync();
             break;
 
         default:
