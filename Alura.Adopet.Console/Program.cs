@@ -17,7 +17,7 @@ try
 
         case "help":
             var help = new Help();
-            help.ExibeDocumentacao(parametros:args[1]);
+            help.ExibeDocumentacao(parametros:args);
             break;
 
         case "show":
@@ -27,18 +27,16 @@ try
 
         case "list":
             var list = new List();
-            list.ListaDadosPetsAPIAsync();
+            list.ListaDadosPetsDaAPIAsync();
             break;
 
         default:
-            // exibe mensagem de comando inválido
             Console.WriteLine("Comando inválido!");
             break;
     }
 }
 catch (Exception ex)
 {
-    // mostra a exceção em vermelho
     Console.ForegroundColor = ConsoleColor.Red;
     Console.WriteLine($"Aconteceu um exceção: {ex.Message}");
 }
