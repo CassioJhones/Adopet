@@ -7,14 +7,14 @@ HttpClient client = ConfiguraHttpClient("http://localhost:5057");
 Console.ForegroundColor = ConsoleColor.Green;
 try
 {
-    // args[0] é o comando a ser executado pelo programa
-    switch (args[0].Trim())
+    string comando = args[0].Trim();
+    switch (comando)
     {
         case "import":
             List<Pet> listaDePet = new List<Pet>();
 
-            // args[1] é o caminho do arquivo a ser importado
-            using (StreamReader sr = new StreamReader(args[1]))
+            string caminhoArquivodeImportacao = args[1];
+            using (StreamReader sr = new StreamReader(caminhoArquivodeImportacao))
             {
                 while (!sr.EndOfStream)
                 {
@@ -92,7 +92,7 @@ try
             break;
         case "list":
             var pets = await ListPetsAsync();
-            foreach(var pet in pets)
+            foreach (var pet in pets)
             {
                 Console.WriteLine(pet);
             }
