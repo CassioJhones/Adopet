@@ -1,5 +1,6 @@
 ﻿using System.Net.Http.Headers;
 using System.Net.Http.Json;
+using Alura.Adopet.Console.Comandoos;
 using Alura.Adopet.Console.Modelos;
 
 HttpClient client = ConfiguraHttpClient("http://localhost:5057");
@@ -11,7 +12,7 @@ try
     {
         case "import":
             var import = new Import();
-            await import.ImportacaoAquivoPetAsync(caminhoDoArquivoImportacao: args[1]);
+            await import.ExecutarAsync(args);
             break;
 
         case "help":
@@ -21,7 +22,7 @@ try
 
         case "show":
             var show = new Show();
-            show.ExibeConteudoArquivo(caminhoDooArquivoASerExibido: args[1]);
+            await show.ExecutarAsync(args);
             break;
 
         case "list":
