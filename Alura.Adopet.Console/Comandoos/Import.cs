@@ -1,4 +1,5 @@
-﻿namespace Alura.Adopet.Console.Comandoos;
+﻿using Alura.Adopet.Console.Modelos;
+namespace Alura.Adopet.Console.Comandoos;
 
 [DocComando(instrucao: "import",
             documentacao: "adopet import <arquivo> comando que realiza a importação do arquivo de pets.")]

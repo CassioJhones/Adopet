@@ -1,4 +1,5 @@
-﻿namespace Alura.Adopet.Console.Comandoos;
+﻿using Alura.Adopet.Console.Modelos;
+namespace Alura.Adopet.Console.Comandoos;
 
 [DocComando(instrucao: "list",
   documentacao: "adopet list comando que exibe no terminal o conteúdo cadastrado na base de dados da AdoPet.")]

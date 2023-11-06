@@ -1,5 +1,4 @@
 ﻿using System.Reflection;
-
 namespace Alura.Adopet.Console.Comandoos;
 
 [DocComando(instrucao: "help",
