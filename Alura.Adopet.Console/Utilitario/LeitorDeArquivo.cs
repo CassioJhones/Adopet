@@ -3,23 +3,25 @@ namespace Alura.Adopet.Console.Utilitario;
 
 internal class LeitorDeArquivo
 {
-    public List<Pet> RealizaLeitura(string caminhoDoArquivoParaLer)
+    public List<Pet> RealizaLeitura(string caminhoDoArquivoASerLido)
     {
-        List<Pet> listadePet = new List<Pet>();
-        using (StreamReader sr = new StreamReader(caminhoDoArquivoParaLer))
+        List<Pet> listaDePet = new List<Pet>();
+        using (StreamReader sr = new StreamReader(caminhoDoArquivoASerLido))
         {
-            System.Console.WriteLine("------ Serão importados os dados abaixo ------");
+            System.Console.WriteLine("----- Dados a serem importados -----");
             while (!sr.EndOfStream)
             {
                 // separa linha usando ponto e vírgula
                 string[]? propriedades = sr.ReadLine().Split(';');
                 // cria objeto Pet a partir da separação
-                Pet pet = new Pet(Guid.Parse(propriedades[0]), propriedades[1],
-                    int.Parse(propriedades[2]) == 1 ? TipoPet.Gato : TipoPet.Cachorro);
-                listadePet.Add(pet);
+                Pet pet = new Pet(Guid.Parse(propriedades[0]),
+                propriedades[1],
+                int.Parse(propriedades[2]) == 1 ? TipoPet.Gato : TipoPet.Cachorro
+                );
+                listaDePet.Add(pet);
             }
         }
 
-        return listadePet;
+        return listaDePet;
     }
 }

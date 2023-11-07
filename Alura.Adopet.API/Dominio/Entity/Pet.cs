@@ -7,7 +7,7 @@ namespace Alura.Adopet.API.Dominio.Entity
     {
         public Pet()
         {
-            this.Id = Guid.NewGuid();
+            Id = Guid.NewGuid();
         }
 
         [Key]

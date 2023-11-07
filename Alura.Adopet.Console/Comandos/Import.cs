@@ -2,7 +2,7 @@
 using Alura.Adopet.Console.Servicos;
 using Alura.Adopet.Console.Utilitario;
 
-namespace Alura.Adopet.Console.Comandoos;
+namespace Alura.Adopet.Console.Comandos;
 
 [DocComando(instrucao: "import",
             documentacao: "adopet import <arquivo> comando que realiza a importação do arquivo de pets.")]

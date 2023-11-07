@@ -6,7 +6,7 @@ namespace Alura.Adopet.API.Dominio.Entity
     {
         public Cliente()
         {
-           this.Id = Guid.NewGuid();
+           Id = Guid.NewGuid();
         }
 
         [Key]

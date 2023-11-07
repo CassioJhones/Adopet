@@ -21,7 +21,7 @@ namespace Alura.Adopet.API.Dados.Repository
 
         public Pet Atualizar(int id, Pet _pet)
         {
-            var _obj = this.ObterPorId(_pet.Id);
+            var _obj = ObterPorId(_pet.Id);
             if (_obj == null)
             {
                 return null;
@@ -33,7 +33,7 @@ namespace Alura.Adopet.API.Dados.Repository
 
         public bool Excluir(Guid id)
         {
-            var _obj = this.ObterPorId(id);
+            var _obj = ObterPorId(id);
             if (_obj == null)
             {
                 return false;
