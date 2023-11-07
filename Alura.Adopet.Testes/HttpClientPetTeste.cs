@@ -23,7 +23,7 @@ public class HttpClientPetTeste
     {//Nome do teste deve ser bem explicativo no método
 
         //ARRANGE = Configuracao do projeto
-        var clientePet = new HttpClientPet();
+        var clientePet = new HttpClientPet(Uri:"http://localhost:1111");
 
         //ACT oque testar + ASSERT Quais as expectativas;
         await Assert.ThrowsAnyAsync<Exception>(() => clientePet.ListPetsAsync());
